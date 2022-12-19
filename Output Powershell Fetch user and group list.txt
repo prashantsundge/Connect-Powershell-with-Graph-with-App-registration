@@ -1,0 +1,76 @@
+PS C:\Users\prashantkumar.sundge> ## first program to fetch the user and group details
+
+Connect-MgGraph -ClientID "c295f028-2e84-4eea-bf04-61df956e6bed" -TenantId "39a72c80-f8f0-4250-9859-1ef64f92ac91" -CertificateThumbprint "9B4B6699560C5967671BF023002A04BB51DDE9FE" ## Or -CertificateThumbprint instead of -CertificateName
+
+Write-Host "USERS"
+Write-Host "*****************************************************"
+
+#list first 10 users list
+Get-MgUser -Property "id,DisplayName" -PageSize 20 | Format-Table DisplayName, Id
+
+Write-Host "GROUP"
+Write-Host "*****************************************************"
+
+Get-MgGroup -Property "Id, DisplayName" -PageSize 20 | Format-Table DisplayName, Id
+
+Disconnect-Graph
+
+
+Welcome To Microsoft Graph!
+USERS
+*****************************************************
+
+DisplayName          Id                                  
+-----------          --                                  
+Adele Vance          3f3a6073-ce1e-486f-8e38-22afd3415638
+Alex Wilber          2952a8fb-0914-4370-b094-393b36f9c69f
+Diego Siciliani      6322b02f-90bb-4c3b-8118-8099a79b8c96
+Grady Archie         ced833b4-ea0d-4b05-9bdc-98949316a5ab
+Henrietta Mueller    dd1bf9bd-1205-4058-bdee-44b27abf87bd
+Isaiah Langer        380dee2c-8ed0-49ae-a94d-f2066d16968c
+Johanna Lorenz       1d8fc91c-3133-4c4f-800f-22d79510e2d9
+Joni Sherman         86b72d64-bc78-495a-9532-60e8fd3f598a
+Lee Gu               586133e3-3089-46e2-8ee7-e3686f7f5fd9
+Lidia Holloway       66320e44-aafb-43f1-9031-7007091ea2b1
+Lynne Robbins        bf1a097b-dbf7-47e0-af30-a8e5fc974f59
+Megan Bowen          76c4c149-cfc3-4507-8228-68f4475753c4
+Miriam Graham        5d773e4a-8eae-43c4-82ab-e776b401e5f5
+Nestor Wilke         9b5eeffd-c820-4d7b-97fe-fd573196181a
+Prashantkumar Sundge 86479e62-c1ab-482a-b002-45fb5f2f1deb
+Patti Fernandez      1388a095-f070-49d5-9c5c-2f172cf6d717
+Pradeep Gupta        d5fbbcdc-cbcd-4214-a39c-3a2e531a2c57
+
+
+GROUP
+*****************************************************
+
+DisplayName                         Id                                  
+-----------                         --                                  
+Digital Initiative Public Relations 29421798-f3a9-456c-a6ac-7c8e989f059a
+U.S. Sales                          4269736e-8d7a-46b7-b3e8-b8a8d6451c2f
+Sales and Marketing                 5602b0b6-b9cd-4097-a681-a44b807d90fb
+Mark 8 Project Team                 569b5037-abeb-4a77-aa9f-166520407ea5
+Sample Team Site                    77c03387-7d86-456c-9b65-4058b0e5d431
+Retail                              cd8b86df-5320-45d3-b814-33817ab1a4cf
+MSFT                                e5754b42-6529-4d48-804f-bf47b247b487
+
+
+
+
+ClientId              : c295f028-2e84-4eea-bf04-61df956e6bed
+TenantId              : 39a72c80-f8f0-4250-9859-1ef64f92ac91
+CertificateThumbprint : 9B4B6699560C5967671BF023002A04BB51DDE9FE
+Scopes                : {Group.Read.All, User.Read.All}
+AuthType              : AppOnly
+AuthProviderType      : ClientCredentialProvider
+CertificateName       : 
+Account               : 
+AppName               : PowershellconnectwithCERT Demo
+ContextScope          : Process
+Certificate           : 
+PSHostVersion         : 5.1.19041.2364
+
+
+
+
+PS C:\Users\prashantkumar.sundge> 
